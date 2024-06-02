@@ -4,16 +4,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
 import pro.sky.SpringShop.exceptions.ShopException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @SessionScope
 public class ShopService {
-    private List<Integer> shopList;
-
-    public ShopService(List<Integer> shopList) {
-        this.shopList = shopList;
-    }
+    private List<Integer> shopList = new ArrayList<>();
 
     public void add(Integer... args) {
         if (args.length==0) {
